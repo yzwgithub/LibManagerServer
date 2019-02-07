@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.andios.bean.UserBean" table="user">
+        <id name="u_index" column="user_index">
+            <generator class="identity"/>
+        </id>
+        <property name="u_id" column="user_id"/>
+        <property name="u_name" column="user_name"/>
+        <property name="u_password" column="password"/>
+        <property name="u_nickName" column="nick_name"/>
+    </class>
+
+    <class name="org.andios.bean.ScanBean" table="scan">
+        <id name="show_id" column="show_id">
+            <generator class="identity"/>
+        </id>
+        <property name="picture_url" column="picture_url"/>
+        <property name="show_title" column="show_title"/>
+        <property name="show_information" column="show_information"/>
+    </class>
+
+    <class name="org.andios.bean.LibInformationBean" table="information_show">
+        <id name="lib_id">
+            <generator class="identity"/>
+        </id>
+        <property name="picture_url"/>
+        <property name="lib_information"/>
+    </class>
+</hibernate-mapping>

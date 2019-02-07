@@ -4,9 +4,18 @@
            xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="3.0">
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:org/andios/config/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>org.andois.servlet.LoginServlet</servlet-class>
+        <servlet-class>org.andios.servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -16,11 +25,29 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>org.andois.servlet.RegisterServlet</servlet-class>
+        <servlet-class>org.andios.servlet.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/servlet/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ScanServlet</servlet-name>
+        <servlet-class>org.andios.servlet.ScanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScanServlet</servlet-name>
+        <url-pattern>/servlet/ScanServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LibInformationServlet</servlet-name>
+        <servlet-class>org.andios.servlet.LibInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LibInformationServlet</servlet-name>
+        <url-pattern>/servlet/LibInformationServlet</url-pattern>
     </servlet-mapping>
 </web-app>
