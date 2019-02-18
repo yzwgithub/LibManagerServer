@@ -15,8 +15,8 @@ import java.io.IOException;
 /**
  * Created by ZheWenYang on 2019/1/9
  */
-@WebServlet(name = "RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "ResetUserServlet")
+public class ResetUserServlet extends HttpServlet {
     private ApplicationContext context=null;
     private UserService userService;
 

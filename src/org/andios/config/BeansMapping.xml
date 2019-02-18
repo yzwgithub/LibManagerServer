@@ -30,4 +30,18 @@
         <property name="picture_url"/>
         <property name="lib_information"/>
     </class>
+
+    <class name="org.andios.bean.AppointmentBean" table="appointment">
+        <id name="appointment_id">
+            <generator class="identity"/>
+        </id>
+        <property name="lib_name" column="lib_name"/>
+        <property name="date" column="date"/>
+        <property name="time" column="time"/>
+        <property name="college_name" column="college_name"/>
+        <property name="class_name" column="class_name"/>
+        <property name="number_of_class" column="number_of_class"/>
+        <property name="experiment_name" column="experiment_name"/>
+        <property name="experiment_subject" column="experiment_subject"/>
+    </class>
 </hibernate-mapping>
