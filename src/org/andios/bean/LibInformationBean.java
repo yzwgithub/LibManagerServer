@@ -1,20 +1,24 @@
 package org.andios.bean;
 
 /**
- * Created by ZheWenYang on 2019/2/4
+ * Created by ZheWenYang on 2019/1/31
  */
+
 public class LibInformationBean {
 
     private int lib_id;
     private String picture_url;
-    private String lib_information;
+    private String show_title;
+    private String show_information;
 
     public LibInformationBean() {
+
     }
 
-    public LibInformationBean(String picture_url, String lib_information) {
+    public LibInformationBean(String picture_url, String show_title, String show_information) {
         this.picture_url = picture_url;
-        this.lib_information = lib_information;
+        this.show_title = show_title;
+        this.show_information = show_information;
     }
 
     public int getLib_id() {
@@ -33,11 +37,19 @@ public class LibInformationBean {
         this.picture_url = picture_url;
     }
 
-    public String getLib_information() {
-        return lib_information;
+    public String getShow_title() {
+        return show_title;
     }
 
-    public void setLib_information(String lib_information) {
-        this.lib_information = lib_information;
+    public void setShow_title(String show_title) {
+        this.show_title = show_title;
+    }
+
+    public String getShow_information() {
+        return show_information;
+    }
+
+    public void setShow_information(String show_information) {
+        this.show_information = show_information;
     }
 }

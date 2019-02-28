@@ -1,7 +1,7 @@
 package org.andios.service_implement;
 
-import org.andios.bean.ScanBean;
-import org.andios.service.ScanService;
+import org.andios.bean.ShowInformationBean;
+import org.andios.service.ShowInformationService;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Service;
@@ -15,29 +15,29 @@ import java.util.List;
  */
 
 @Transactional
-@Service("showImplement")
+@Service("showInformationImplement")
 
-public class ScanImplement implements ScanService {
+public class ShowInformationImplement implements ShowInformationService {
     @Resource
     SessionFactory factory;
 
     @Override
-    public void save(ScanBean scanBean) {
-        factory.getCurrentSession().persist(scanBean);
+    public void save(ShowInformationBean showInformationBean) {
+        factory.getCurrentSession().persist(showInformationBean);
     }
 
     @Override
-    public void update(ScanBean scanBean) {
-        factory.getCurrentSession().merge(scanBean);
+    public void update(ShowInformationBean showInformationBean) {
+        factory.getCurrentSession().merge(showInformationBean);
     }
 
     @Override
-    public ScanBean findUserById(int id) {
-        return factory.getCurrentSession().get(ScanBean.class,id);
+    public ShowInformationBean findUserById(int id) {
+        return factory.getCurrentSession().get(ShowInformationBean.class,id);
     }
 
     @Override
-    public List<ScanBean> findUserByHQL(String hql) {
+    public List<ShowInformationBean> findUserByHQL(String hql) {
         Query hqlQuery=factory.getCurrentSession().createQuery(hql);
         return hqlQuery.list();
     }

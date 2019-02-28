@@ -22,13 +22,13 @@ public class LibInformationImplement implements LibInformationService {
 
 
     @Override
-    public void save(LibInformationBean informationBean) {
-        factory.getCurrentSession().persist(informationBean);
+    public void save(LibInformationBean libInformationBean) {
+        factory.getCurrentSession().persist(libInformationBean);
     }
 
     @Override
-    public void update(LibInformationBean informationBean) {
-        factory.getCurrentSession().merge(informationBean);
+    public void update(LibInformationBean libInformationBean) {
+        factory.getCurrentSession().merge(libInformationBean);
     }
 
     @Override

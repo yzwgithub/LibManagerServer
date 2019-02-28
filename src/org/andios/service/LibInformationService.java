@@ -1,6 +1,7 @@
 package org.andios.service;
 
 import org.andios.bean.LibInformationBean;
+import org.andios.bean.ShowInformationBean;
 
 import java.util.List;
 
@@ -9,10 +10,10 @@ import java.util.List;
  */
 public interface LibInformationService {
     //保存的方法
-    void save(LibInformationBean informationBean);
+    void save(LibInformationBean libInformationBean);
 
     //更新的方法
-    void update(LibInformationBean informationBean);
+    void update(LibInformationBean libInformationBean);
 
     //通过ID进行查找
     LibInformationBean findUserById(int id);

@@ -14,8 +14,8 @@
         <property name="u_nickName" column="nick_name"/>
     </class>
 
-    <class name="org.andios.bean.ScanBean" table="scan">
-        <id name="show_id" column="show_id">
+    <class name="org.andios.bean.LibInformationBean" table="information_lib">
+        <id name="lib_id" column="lib_id">
             <generator class="identity"/>
         </id>
         <property name="picture_url" column="picture_url"/>
@@ -23,14 +23,30 @@
         <property name="show_information" column="show_information"/>
     </class>
 
-    <class name="org.andios.bean.LibInformationBean" table="information_show">
-        <id name="lib_id">
+    <class name="org.andios.bean.LibDetailsBean" table="details_lib">
+        <id name="lib_id" column="lib_id">
             <generator class="identity"/>
         </id>
-        <property name="picture_url"/>
-        <property name="lib_information"/>
+        <property name="title" column="title"/>
+        <property name="imgUrl" column="img_url"/>
+        <property name="subTitle" column="sub_title"/>
+        <property name="content" column="content"/>
+    </class>
+    <class name="org.andios.bean.ShowInformationBean" table="information_show">
+        <id name="show_id" column="show_id">
+            <generator class="identity"/>
+        </id>
+        <property name="picture_url" column="picture_url"/>
+        <property name="show_information" column="show_information"/>
     </class>
 
+    <class name="org.andios.bean.ShowDetailsBean" table="details_show">
+        <id name="show_id" column="show_id"/>
+        <property name="title" column="title"/>
+        <property name="imgUrl" column="img_url"/>
+        <property name="subTitle" column="sub_title"/>
+        <property name="content" column="content"/>
+    </class>
     <class name="org.andios.bean.AppointmentBean" table="appointment">
         <id name="appointment_id">
             <generator class="identity"/>
@@ -43,5 +59,13 @@
         <property name="number_of_class" column="number_of_class"/>
         <property name="experiment_name" column="experiment_name"/>
         <property name="experiment_subject" column="experiment_subject"/>
+    </class>
+
+    <class name="org.andios.bean.MyAppointmentBean" table="my_appointment">
+        <id name="appointment_index" column="appointment_index">
+            <generator class="identity"/>
+        </id>
+        <property name="u_index" column="u_index"/>
+        <property name="appointment_id" column="appointment_id"/>
     </class>
 </hibernate-mapping>

@@ -34,12 +34,21 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>ScanServlet</servlet-name>
-        <servlet-class>org.andios.servlet.ScanServlet</servlet-class>
+        <servlet-name>ShowInformationServlet</servlet-name>
+        <servlet-class>org.andios.servlet.ShowInformationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ScanServlet</servlet-name>
-        <url-pattern>/servlet/ScanServlet</url-pattern>
+        <servlet-name>ShowInformationServlet</servlet-name>
+        <url-pattern>/servlet/ShowInformationServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ShowDetailsServlet</servlet-name>
+        <servlet-class>org.andios.servlet.ShowDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowDetailsServlet</servlet-name>
+        <url-pattern>/servlet/ShowDetailsServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -52,6 +61,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>LibDetailsServlet</servlet-name>
+        <servlet-class>org.andios.servlet.LibDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LibDetailsServlet</servlet-name>
+        <url-pattern>/servlet/LibDetailsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AppointmentServlet</servlet-name>
         <servlet-class>org.andios.servlet.AppointmentServlet</servlet-class>
     </servlet>
@@ -59,5 +77,14 @@
     <servlet-mapping>
         <servlet-name>AppointmentServlet</servlet-name>
         <url-pattern>/servlet/AppointmentServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyAppointmentServlet</servlet-name>
+        <servlet-class>org.andios.servlet.MyAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyAppointmentServlet</servlet-name>
+        <url-pattern>/servlet/MyAppointmentServlet</url-pattern>
     </servlet-mapping>
 </web-app>
