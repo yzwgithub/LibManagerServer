@@ -30,6 +30,11 @@ public class AppointmentImplement implements AppointmentService {
     }
 
     @Override
+    public AppointmentBean findUserById(int id) {
+        return factory.getCurrentSession().get(AppointmentBean.class,id);
+    }
+
+    @Override
     public List<AppointmentBean> findUserByHQL(String hql) {
         Query hqlQuery=factory.getCurrentSession().createQuery(hql);
         return hqlQuery.list();

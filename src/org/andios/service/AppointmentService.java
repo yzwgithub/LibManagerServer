@@ -15,7 +15,7 @@ public interface AppointmentService {
     void update(AppointmentBean informationBean);
 
     //通过ID进行查找
-//    AppointmentBean findUserById(int id);
+    AppointmentBean findUserById(int id);
 
     //通过HQL语句进行查找
     List<AppointmentBean> findUserByHQL(String hql);

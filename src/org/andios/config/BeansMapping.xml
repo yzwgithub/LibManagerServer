@@ -68,4 +68,12 @@
         <property name="u_index" column="u_index"/>
         <property name="appointment_id" column="appointment_id"/>
     </class>
+
+    <class name="org.andios.bean.MyCollectionBean" table="my_collection">
+        <id name="collection_index" column="collection_index">
+            <generator class="identity"/>
+        </id>
+        <property name="u_index" column="u_index"/>
+        <property name="lib_id" column="lib_id"/>
+    </class>
 </hibernate-mapping>

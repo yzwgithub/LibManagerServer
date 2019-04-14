@@ -1,8 +1,9 @@
 package org.andios.servlet;
 
 import com.google.gson.Gson;
-import org.andios.bean.MyAppointmentBean;
-import org.andios.service.MyAppointmentService;
+import com.google.gson.reflect.TypeToken;
+import org.andios.bean.AppointmentBean;
+import org.andios.service.AppointmentService;
 import org.andios.util.Constant;
 import org.springframework.context.ApplicationContext;
 
@@ -13,14 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
- * Created by ZheWenYang on 2019/2/28
+ * Created by ZheWenYang on 2019/4/1
  */
-@WebServlet(name = "MyAppointmentServlet")
-public class MyAppointmentServlet extends HttpServlet {
+@WebServlet(name = "GetAppointmentServlet")
+public class GetAppointmentServlet extends HttpServlet {
     private ApplicationContext context=null;
+    private Gson gson;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -29,13 +30,13 @@ public class MyAppointmentServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
-        String u_index=request.getParameter("u_index");
-        Gson gson=new Gson();
+        gson=new Gson();
+        String appointment_id=request.getParameter("appointment_id");
+
         context = Constant.getContext();
-        MyAppointmentService myAppointmentService = (MyAppointmentService) context.getBean("myAppointmentImplement");
-        String Sql="from MyAppointmentBean where u_index='"+u_index+"'";
-        List<MyAppointmentBean> list= myAppointmentService.findUserByHQL(Sql);
-        String stringList=gson.toJson(list);
-        out.write(stringList);
+
+        AppointmentService appointmentService= (AppointmentService) context.getBean("appointmentImplement");
+        AppointmentBean bean=appointmentService.findUserById(Constant.toInt(appointment_id));
+        out.write(gson.toJson(bean));
     }
 }

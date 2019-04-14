@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.List;
 
 /**
@@ -21,17 +21,26 @@ import java.util.List;
 @WebServlet(name = "LibInformationServlet")
 public class LibInformationServlet extends HttpServlet {
     private ApplicationContext context=null;
+    private String Sql=null;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
 
         Gson gson=new Gson();
         context = Constant.getContext();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=utf-8");
+        Writer out = response.getWriter();
+
+        String lib_id=request.getParameter("lib_id");
         LibInformationService informationService = (LibInformationService) context.getBean("libInformationImplement");
-        String Sql="from LibInformationBean";
+        if (lib_id!=null){
+            Sql="from LibInformationBean where lib_id="+lib_id;
+        }else {
+            Sql="from LibInformationBean";
+        }
         List<LibInformationBean>list=informationService.findUserByHQL(Sql);
         String stringList=gson.toJson(list);
         out.write(stringList);

@@ -87,4 +87,46 @@
         <servlet-name>MyAppointmentServlet</servlet-name>
         <url-pattern>/servlet/MyAppointmentServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyCollectionServlet</servlet-name>
+        <servlet-class>org.andios.servlet.MyCollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyCollectionServlet</servlet-name>
+        <url-pattern>/servlet/MyCollectionServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>org.andios.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/servlet/UserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>GetAppointmentServlet</servlet-name>
+    <servlet-class>org.andios.servlet.GetAppointmentServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>GetAppointmentServlet</servlet-name>
+        <url-pattern>/servlet/GetAppointmentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SetCollectionServlet</servlet-name>
+        <servlet-class>org.andios.servlet.SetCollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCollectionServlet</servlet-name>
+        <url-pattern>/servlet/SetCollectionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CancelCollectionServlet</servlet-name>
+        <servlet-class>org.andios.servlet.CancelCollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CancelCollectionServlet</servlet-name>
+        <url-pattern>/servlet/CancelCollectionServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
