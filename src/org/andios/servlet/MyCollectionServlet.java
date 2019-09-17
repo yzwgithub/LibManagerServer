@@ -28,7 +28,6 @@ public class MyCollectionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gson gson=new Gson();
         context = Constant.getContext();
-        PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         String collection_u_index=request.getParameter("u_index");
@@ -36,6 +35,7 @@ public class MyCollectionServlet extends HttpServlet {
         String Sql="from MyCollectionBean where u_index='"+collection_u_index+"'";
         List<MyCollectionBean> list= myCollectionService.findUserByHQL(Sql);
         String stringList=gson.toJson(list);
+        PrintWriter out = response.getWriter();
         out.write(stringList);
     }
 }

@@ -26,7 +26,6 @@ public class MyAppointmentServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         String u_index=request.getParameter("u_index");
@@ -36,6 +35,7 @@ public class MyAppointmentServlet extends HttpServlet {
         String Sql="from MyAppointmentBean where u_index='"+u_index+"'";
         List<MyAppointmentBean> list= myAppointmentService.findUserByHQL(Sql);
         String stringList=gson.toJson(list);
+        PrintWriter out = response.getWriter();
         out.write(stringList);
     }
 }

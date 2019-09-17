@@ -28,7 +28,6 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         context = Constant.getContext();
         Gson gson=new Gson();
-        PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         String u_name=request.getParameter("u_name");
@@ -37,6 +36,7 @@ public class UserServlet extends HttpServlet {
         String Sql="from UserBean where u_name='"+u_name+"' and u_password='"+u_password+"'";
         List<UserBean> list=userService.findUserByHQL(Sql);
         String stringList=gson.toJson(list);
+        PrintWriter out = response.getWriter();
         out.write(stringList);
     }
 }

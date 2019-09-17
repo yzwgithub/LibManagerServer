@@ -27,12 +27,11 @@ public class GetAppointmentServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         gson=new Gson();
         String appointment_id=request.getParameter("appointment_id");
-
+        PrintWriter out = response.getWriter();
         context = Constant.getContext();
 
         AppointmentService appointmentService= (AppointmentService) context.getBean("appointmentImplement");
